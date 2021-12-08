@@ -1,0 +1,133 @@
+.o-aside {
+	background-color: map-get($brand, secondary);
+	padding-right: 0;
+	height: 100vh;
+	border-right: 1px solid $lightGrey;
+	position: fixed;
+
+	&__title {
+		background-image: map-get($brand, tertiary);
+		width: 100%;
+		border-bottom: 1px solid $grey;
+		padding: 0.4rem 1rem;
+
+		span {
+			width: 100%;
+		}
+
+		&:after {
+			content: '';
+			display: block;
+			width: 28px;
+			height: 26px;
+			background: url('../images/plus.png') no-repeat center;
+			float: right;
+		}
+	}
+
+	&__list {
+		margin: 0;
+		list-style: none;
+		padding: 0 0 37px;
+		overflow-y: auto;
+
+		.c-aside {
+			&__item {
+				padding: 0.4rem 1rem;
+				float: left;
+				clear: both;
+				width: 100%;
+				background-image: map-get($brand, quaternary);
+				border-bottom: 1px solid $lightGrey;
+				display: flex;
+
+				&:hover {
+					cursor: pointer;
+				}
+
+				&:before {
+					content: '';
+					display: inline-block;
+					width: 14px;
+					height: 10px;
+					background: url('../images/li_img.png') no-repeat center;
+					margin-right: 0.3rem;
+				}
+
+				&-remove {
+					width: 20px;
+					height: 14px;
+					background: url('../images/delete.png') no-repeat center;
+					margin-left: 0.5rem;
+				}
+
+				&-label {
+					margin-bottom: 0;
+					width: 100%;
+					float: left;
+					line-height: 1.4rem;
+
+					&:hover {
+						cursor: pointer;
+					}
+				}
+
+				&-checkbox {
+					&:hover {
+						cursor: pointer;
+					}
+				}
+
+				&--selected {
+					background-image: map-get($brand, quinary);
+					color: $white;
+					border-bottom: 1px solid $darkGrey;
+				}
+			}
+		}
+		&--filtering {
+			.c-aside__item {
+				display: none;
+
+				&--filtered {
+					display: flex;
+				}
+			}
+		}
+	}
+
+	&__filter {
+		background-image: map-get($brand, quinary);
+		color: $white;
+		padding: 0.4rem 1rem;
+		width: 100%;
+		position: absolute;
+		bottom: 0;
+
+		.c-aside__filter {
+			&-label {
+				margin: 0 1rem 0 0;
+			}
+
+			&-input {
+				width: 100%;
+				border-radius: 5rem;
+				border: 0;
+				box-shadow: none;
+				padding: 0 1rem;
+			}
+
+			&-remove {
+				width: 20px;
+				height: 14px;
+				background: url('../images/delete.png') no-repeat center;
+				display: none;
+				margin-left: -25px;
+
+				&:hover {
+					cursor: pointer;
+				}
+			}
+		}
+	}
+}

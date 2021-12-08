@@ -1,0 +1,105 @@
+---
+# Output debugging info
+# loglevel: debug
+
+# Major version of Bootstrap: 3 or 4
+bootstrapVersion: 4
+
+# If Bootstrap version 4 is used - turn on/off flexbox model
+useFlexbox: true
+
+# Webpack loaders, order matters
+styleLoaders:
+  - style-loader
+  - css-loader
+  - postcss-loader
+  - sass-loader
+
+# Extract styles to stand-alone css file
+# Different settings for different environments can be used,
+# It depends on value of NODE_ENV environment variable
+# This param can also be set in webpack config:
+#   entry: 'bootstrap-loader/extractStyles'
+# extractStyles: true
+env:
+ development:
+   extractStyles: false
+ production:
+   extractStyles: true
+
+# Customize Bootstrap variables that get imported before the original Bootstrap variables.
+# Thus original Bootstrap variables can depend on values from here. All the bootstrap
+# variables are configured with !default, and thus, if you define the variable here, then
+# that value is used, rather than the default. However, many bootstrap variables are derived
+# from other bootstrap variables, and thus, you want to set this up before we load the
+# official bootstrap versions.
+# For example, _variables.scss contains:
+# $input-color: $gray !default;
+# This means you can define $input-color before we load _variables.scss
+preBootstrapCustomizations: ./app/assets/scss/_bootstrap_overide.scss
+
+# Import your custom styles here. You have access to all the bootstrap variables. If you require
+# your sass files separately, you will not have access to the bootstrap variables, mixins, clases, etc.
+# Usually this endpoint-file contains list of @imports of your application styles.
+appStyles: ./app/assets/scss/zanussi.scss
+
+### Bootstrap styles
+styles:
+
+  # Mixins
+  mixins: true
+
+  # Reset and dependencies
+  print: true
+
+  # Core CSS
+  buttons: true
+  code: true
+  forms: true
+  grid: true
+  images: true
+  reboot: true
+  tables: true
+  type: true
+
+  # Components
+  alert: false
+  badge: false
+  breadcrumb: false
+  button-group: false
+  card: false
+  close: true
+  custom-forms: false
+  dropdown: false
+  input-group: false
+  jumbotron: false
+  list-group: false
+  media: false
+  nav: false
+  navbar: false
+  pagination: false
+  progress: false
+  transitions: false
+
+  # Components w/ JavaScript
+  carousel: false
+  modal: true
+  popover: false
+  tooltip: false
+
+  # Utility classes
+  utilities: true
+
+### Bootstrap scripts
+scripts:
+  alert: false
+  button: false
+  carousel: false
+  collapse: false
+  dropdown: false
+  modal: true
+  popover: false
+  scrollspy: false
+  tab: false
+  tooltip: false
+  util: true

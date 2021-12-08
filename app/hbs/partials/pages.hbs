@@ -1,0 +1,16 @@
+<div class="d-flex flex-column">
+	<ul class="o-aside__list">
+		{{#each pages}}
+			<li class="c-aside__item c-aside__item{{@index}} align-items-center" id="c-aside__item{{@index}}" data-page-name="{{this}}" data-page-order="{{@index}}">
+				<label class="c-aside__item-label" for="pagesCheckBox{{@index}}">{{this}}</label>
+				<input class="c-aside__item-checkbox" id="pagesCheckBox{{@index}}" name="pagesCheckBox{{@index}}" type="checkbox">
+				<span class="c-aside__item-remove"></span>
+			</li>
+		{{/each}}
+	</ul>
+	<div class="o-aside__filter d-flex align-items-center">
+		<label class="c-aside__filter-label" for="c-aside__filter-input">Filter:</label>
+		<input type="text" id="c-aside__filter-input" name="c-aside__filter-input" class="c-aside__filter-input">
+		<span class="c-aside__filter-remove"></span>
+	</div>
+</div>

@@ -1,0 +1,22 @@
+body {
+	background: $bgColor;
+	font-family: Arial,'Helvetica Neue', Helvetica,sans-serif;
+	color: $fontColor;
+	img {
+		max-width: 100%;
+	}
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		font-weight: normal;
+		float: left;
+		clear: both;
+		margin: 0;
+	}
+	h3 {
+		font-size: 1.1rem;
+	}
+}
